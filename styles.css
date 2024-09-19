@@ -4,33 +4,122 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  scroll-behavior: smooth;
+  outline: 1px solid green;
 }
 
 :root {
-  --background-color: #321010;
-  --header-color: #4b1b1b;
-  --font-color: white;
-}
-
-html {
-  background-color: var(--background-color);
+  --background-color: white;
+  --second-background-color: rgb(238, 238, 238);
+  --header-color: white;
+  --font-color: black;
 }
 
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--header-color);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   padding: 2rem 12%;
+  box-shadow: 0 -10px 20px black;
+}
+
+#menu-icon {
+  font-size: 2rem;
+  display: none;
+}
+
+.navbar a {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: black;
+  margin-left: 2rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.navbar a:hover {
+  color: red;
+  transform: scale(1.1);
 }
 
 .logo {
   color: var(--font-color);
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .span-color {
-  color: #ff6d6d;
+  color: red;
+}
+
+section:nth-child(even) {
+  background-color: var(--second-background-color);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  padding: 0 12%;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.title span {
+  font-size: 7rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+}
+
+.btn-group {
+  display: flex;
+}
+
+.hero-btn {
+  margin: 1rem 0;
+  border: 2px solid red;
+  padding: 1rem 2rem;
+  background-color: red;
+  border-radius: 30px;
+  color: white;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  box-shadow: 0 0 5px red;
+  transform: scale(1.1) translateX(1rem);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
 }
