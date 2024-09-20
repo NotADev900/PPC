@@ -8,14 +8,18 @@
   padding: 0;
   border: none;
   scroll-behavior: smooth;
-  outline: 1px solid green;
+  /* outline: 1px solid green; */
 }
 
 :root {
-  --background-color: white;
-  --second-background-color: rgb(238, 238, 238);
-  --header-color: white;
+  --background-color: rgb(236, 236, 236);
+  --second-background-color: rgb(221, 221, 221);
+  --header-bg-color: rgba(236, 236, 236, 0.8);
   --font-color: black;
+}
+
+html {
+  background-color: var(--background-color);
 }
 
 header {
@@ -26,10 +30,11 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--header-bg-color);
   backdrop-filter: blur(10px);
-  padding: 2rem 12%;
+  padding: 1.5rem 12%;
   box-shadow: 0 -10px 20px black;
+  z-index: 999;
 }
 
 #menu-icon {
@@ -70,12 +75,25 @@ section:nth-child(even) {
   background-color: var(--second-background-color);
 }
 
-section {
+.services {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
   padding: 0 12%;
+}
+
+.hero {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-container {
+  display: flex;
+  position: relative;
 }
 
 .title {
@@ -96,6 +114,12 @@ section {
   display: flex;
 }
 
+.left-hero {
+  background-color: white;
+  padding: 6rem 6rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
 .hero-btn {
   margin: 1rem 0;
   border: 2px solid red;
@@ -110,6 +134,105 @@ section {
 .hero-btn:hover {
   box-shadow: 0 0 5px red;
   transform: scale(1.1) translateX(1rem);
+}
+
+.hero-image {
+  width: 550px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-hero {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -90px;
+  left: 0;
+  right: 0;
+}
+
+.btm-hero-container {
+  display: flex;
+  padding: 1rem 5rem;
+  gap: 5rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.btm-hero-sub {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.btm-hero-sub span {
+  color: red;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.icon-text {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.counter {
+  font-weight: 700;
+  color: red;
+  font-size: 2.5rem;
+}
+
+.services {
+  justify-content: center;
+}
+
+.services-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.services-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+
+.services-circle {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+  color: black;
+  border-radius: 20%;
+  padding: 1rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.services-circle:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.24), 0 0 15px rgba(0, 0, 0, 0.24);
+}
+
+.services-circle span {
+  border: 2px solid red;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 1rem;
+  color: white;
+  background-color: red;
+}
+
+.services-circle p {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
 }
 
 ::-webkit-scrollbar {
